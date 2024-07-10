@@ -57,7 +57,7 @@ const AddBlogs = () => {
     <div className="flex justify-center items-center h-screen bg-gray-100 p-3">
       <Toaster position="top-right" reverseOrder={false} />
       <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Post Your Blog</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Add Post</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
             Title
@@ -108,7 +108,7 @@ const AddBlogs = () => {
             type="submit"
             className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 font-semibold"
           >
-            Post Blog
+            Post
           </button>
         </div>
       </form>

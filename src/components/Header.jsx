@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 bg-gradient-to-r from-orange-400 to-yellow-400 p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-4xl">Blog App</h1>
+        <h1 className="text-white text-4xl">PostFix App</h1>
         <div className="lg:hidden">
           {!isMenuOpen && (
             <img 
@@ -43,7 +43,7 @@ const Header = () => {
                   isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
                 }
               >
-                All Blogs
+                All Posts
               </NavLink>
               <NavLink
                 to="/myBlogs"
@@ -51,7 +51,7 @@ const Header = () => {
                   isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
                 }
               >
-                My Blogs
+                My Posts
               </NavLink>
               <NavLink
                 to="/blogs/add"
@@ -59,7 +59,7 @@ const Header = () => {
                   isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
                 }
               >
-                Add Blogs
+                Add Posts
               </NavLink>
             </>
           )}
@@ -102,21 +102,21 @@ const Header = () => {
                 className="text-white text-2xl font-semibold"
                 onClick={toggleMenu}
               >
-                All Blogs
+                All Posts
               </NavLink>
               <NavLink
                 to="/myBlogs"
                 className="text-white text-2xl font-semibold"
                 onClick={toggleMenu}
               >
-                My Blogs
+                My Posts
               </NavLink>
               <NavLink
                 to="/blogs/add"
                 className="text-white text-2xl font-semibold"
                 onClick={toggleMenu}
               >
-                Add Blogs
+                Add Posts
               </NavLink>
               <button 
                 onClick={() => {

@@ -10,12 +10,11 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
   const avatarLetter = username ? username.charAt(0).toUpperCase() : '';
 
   const handleEdit = () => {
-    if (isUser) { // Check if the current user is the author of the blog post
+    if (isUser) { 
       navigate(`/myBlogs/${id}`);
       console.log(`Editing blog: ${title}`);
     } else {
       console.log('You can only edit your own posts.');
-      // Optionally, show a message or handle the restriction in UI
     }
   };
 
@@ -41,11 +40,10 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
   };
 
   const handleBlogClick = () => {
-    if (isUser) { // Check if the current user is the author of the blog post
+    if (isUser) { 
       navigate(`/myBlogs/${id}`);
     } else {
       console.log('You can only view your own posts.');
-      // Optionally, show a message or handle the restriction in UI
     }
   };
 

@@ -55,14 +55,14 @@ const BlogDetails = () => {
   };
 
   if (!blog) {
-    return <div>Loading...</div>; // Display loading message while fetching data
+    return <div>Loading...</div>; 
   }
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 p-3">
       <Toaster position="top-right" reverseOrder={false} />
       <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Update Your Blog</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Update Your Post</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
             Title
@@ -96,7 +96,7 @@ const BlogDetails = () => {
             type="submit"
             className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 font-semibold"
           >
-            Update Blog
+            Update Post
           </button>
         </div>
       </form>

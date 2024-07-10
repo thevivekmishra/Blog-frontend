@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/index.jsx';
-import BodyImage from './BodyImage'; // Import the BodyImage component
+import BodyImage from './BodyImage'; 
 import toast, { Toaster } from 'react-hot-toast';
 
 const Auth = () => {
