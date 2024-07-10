@@ -13,7 +13,7 @@ const BlogDetails = () => {
   // Fetch blog details based on id from the backend
   const fetchDetails = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/blog/${id}`);
+      const res = await axios.get(`https://blogbackend-62t9.onrender.com/api/blog/${id}`); // Replace with your Render backend URL
       setBlog(res.data.blog); // Set blog state with fetched data
       // Set form inputs with fetched blog details
       setInputs({
@@ -42,7 +42,7 @@ const BlogDetails = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/blog/update/${id}`, {
+      const res = await axios.put(`https://blogbackend-62t9.onrender.com/api/blog/update/${id}`, { // Replace with your Render backend URL
         title: inputs.title,
         description: inputs.description,
       });

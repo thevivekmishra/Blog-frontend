@@ -24,7 +24,7 @@ const Auth = () => {
   };
 
   const sendRequest = async () => {
-    const apiUrl = `${process.env.REACT_APP_BASE_URL}/api/user/${isSignup ? 'signup' : 'login'}`;
+    const apiUrl = `https://blogbackend-62t9.onrender.com/api/user/${isSignup ? 'signup' : 'login'}`; // Replace with your Render backend URL
     try {
       const res = await axios.post(apiUrl, {
         email: inputs.email,

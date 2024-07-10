@@ -10,7 +10,7 @@ const Blogs = () => {
 
   const sendRequest = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/blog`);
+      const res = await axios.get('https://blogbackend-62t9.onrender.com/api/blog'); // Replace with your Render backend URL
       const data = res.data;
       return data;
     } catch (err) {

@@ -21,7 +21,7 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
 
   const deleteRequest = async () => {
     try {
-      const res = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/blog/${id}`);
+      const res = await axios.delete(`https://blogbackend-62t9.onrender.com/api/blog/${id}`); // Replace with your Render backend URL
       console.log('Blog deleted successfully:', res.data);
       refreshBlogs();
     } catch (error) {

@@ -22,7 +22,7 @@ const AddBlogs = () => {
   const sendRequest = async () => {
     const userId = localStorage.getItem('userId');
     try {
-      const apiUrl = `${process.env.REACT_APP_BASE_URL}/api/blog/add`;
+      const apiUrl = 'https://blogbackend-62t9.onrender.com/api/blog/add'; // Replace with your Render backend URL
       const res = await axios.post(apiUrl, {
         title: formData.title,
         description: formData.description,

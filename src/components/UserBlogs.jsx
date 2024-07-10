@@ -11,7 +11,7 @@ const UserBlogs = () => {
 
   const fetchUserBlogs = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/blog/user/${id}`);
+      const res = await axios.get('https://blogbackend-62t9.onrender.com/api/blog/user/' + id); // Replace with your Render backend URL
       const data = res.data;
       return data;
     } catch (err) {
