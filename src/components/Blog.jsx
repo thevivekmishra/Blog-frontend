@@ -88,11 +88,13 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
         >
           {title}
         </div>
-        <img
-          className="w-full h-[350px] object-cover mt-4"
-          src={imageURL}
-          alt={title}
-        />
+        <div className="w-full h-[350px] overflow-hidden">
+          <img
+            className="w-full h-full object-cover"
+            src={imageURL}
+            alt={title}
+          />
+        </div>
         <p className="text-gray-700 text-base mt-4">{description}</p>
         <p className="text-gray-500 text-sm mt-2">Posted on: {formatDate(createdAt)}</p>
       </div>
@@ -101,3 +103,4 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
 };
 
 export default Blog;
+

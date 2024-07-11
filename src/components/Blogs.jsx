@@ -35,7 +35,7 @@ const Blogs = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto ">
         <div className="flex flex-wrap justify-center">
           {isLoading ? (
             Array.from({ length: 6 }).map((_, index) => (
