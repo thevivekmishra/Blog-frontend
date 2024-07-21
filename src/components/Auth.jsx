@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/index.jsx';
-import BodyImage from './BodyImage'; 
 import toast, { Toaster } from 'react-hot-toast';
 
 const Auth = () => {
@@ -66,8 +65,7 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-3">
-      <Toaster position="top-right" reverseOrder={false} />
+    <div className=" flex flex-col items-center justify-center bg-gray-100 p-3 pb-16">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">
           {isSignup ? 'Sign Up' : 'Login'}
@@ -160,7 +158,6 @@ const Auth = () => {
           )}
         </p>
       </div>
-      <BodyImage />
     </div>
   );
 };
