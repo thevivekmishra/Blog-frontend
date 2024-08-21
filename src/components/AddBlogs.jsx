@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import bgimage2 from '../assets/bgimage2.png';
 
 const AddBlogs = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const AddBlogs = () => {
   const sendRequest = async () => {
     const userId = localStorage.getItem('userId');
     try {
-      const apiUrl = 'https://blogbackend-62t9.onrender.com/api/blog/add'; // Replace with your Render backend URL
+      const apiUrl = 'https://blogbackend-62t9.onrender.com/api/blog/add';
       const res = await axios.post(apiUrl, {
         title: formData.title,
         description: formData.description,
@@ -47,19 +48,19 @@ const AddBlogs = () => {
         description: '',
         imageUrl: '',
       });
-      navigate('/myBlogs'); // Navigate to /myBlogs after adding the post
-    } else {
-      // Already handled in sendRequest
+      navigate('/myBlogs');
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100 p-3">
-      <Toaster position="top-right" reverseOrder={false} />
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Add Post</h2>
+    <div className="relative flex justify-center items-center h-[100vh] p-2">
+      <img src={bgimage2} alt="Background" className="absolute inset-0 w-full h-full object-cover  z-0" />
+      <div className="absolute inset-0 z-0"></div>
+      <Toaster/>
+      <form onSubmit={handleSubmit} className="relative w-full max-w-lg bg-white mt-24 sm:ml-[-500px] p-8 rounded-lg shadow-2xl z-10 animate-fadeIn">
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Add Your Post</h2>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
+          <label className="block text-gray-700 text-lg font-semibold mb-2" htmlFor="title">
             Title
           </label>
           <input
@@ -68,13 +69,13 @@ const AddBlogs = () => {
             id="title"
             value={formData.title}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
             placeholder="Enter the title"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">
+          <label className="block text-gray-700 text-lg font-semibold mb-2" htmlFor="description">
             Description
           </label>
           <textarea
@@ -82,14 +83,14 @@ const AddBlogs = () => {
             id="description"
             value={formData.description}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
             placeholder="Enter the description"
             rows="4"
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="imageUrl">
+        <div className="mb-6">
+          <label className="block text-gray-700 text-lg font-semibold mb-2" htmlFor="imageUrl">
             Image URL
           </label>
           <input
@@ -98,7 +99,7 @@ const AddBlogs = () => {
             id="imageUrl"
             value={formData.imageUrl}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
             placeholder="Enter the image URL"
             required
           />
@@ -106,7 +107,7 @@ const AddBlogs = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition duration-300 font-semibold"
+            className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 font-semibold shadow-md transform hover:scale-105"
           >
             Post
           </button>

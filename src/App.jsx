@@ -7,8 +7,6 @@ import UserBlogs from "./components/UserBlogs.jsx";
 import BlogDetails from "./components/BlogDetails.jsx";
 import AddBlogs from "./components/AddBlogs.jsx";
 import { useSelector, useDispatch } from "react-redux";
-import Hero from "./components/Hero.jsx";
-import Footer from "./components/Footer.jsx";
 import { authActions } from "./store/index.jsx";
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -27,7 +25,6 @@ const App = () => {
     <>
       <header>
         <Header />
-        {!isLoggedIn && <Hero />}
       </header>
       <main>
         <Routes>
@@ -46,7 +43,6 @@ const App = () => {
             </>
           )}
         </Routes>
-        {!isLoggedIn && <Footer />}
       </main>
       <Toaster/>
     </>

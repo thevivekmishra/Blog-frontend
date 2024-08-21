@@ -22,6 +22,8 @@ const UserBlogs = () => {
   const refreshBlogs = () => {
     setIsLoading(true); // Set loading state to true before fetching data
     fetchUserBlogs().then((data) => {
+      const sortedBlogs = data.blogs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      setBlogs(sortedBlogs);
       setBlogs(data.blogs);
       setIsLoading(false); // Set loading state to false after fetching data
     });
@@ -32,7 +34,7 @@ const UserBlogs = () => {
   }, [id]);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen pt-24">
       <div className="container mx-auto ">
         <div className="flex flex-wrap justify-center">
           {isLoading ? (
@@ -56,7 +58,7 @@ const UserBlogs = () => {
           ) : (
             <div className="flex flex-col items-center">
               <img src={notfound404} alt="No data available" className="h-[500px] w-[500px] mb-4" />
-              <p className="text-gray-600 text-lg">No posts available</p>
+              <p className="text-gray-600 text-lg">All your posts will appear here after uploading</p>
             </div>
           )}
         </div>

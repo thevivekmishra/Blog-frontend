@@ -20,72 +20,72 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky top-0 bg-gradient-to-r from-orange-400 to-yellow-400 p-4 z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-4xl">PostFix App</h1>
-        <div className="lg:hidden">
-          {!isMenuOpen && (
-            <img 
-              src={menuIcon} 
-              alt="Menu Icon" 
-              className="h-6 w-6 cursor-pointer" 
-              onClick={toggleMenu} 
-            />
-          )}
-        </div>
-        <div className="hidden lg:flex space-x-6 items-center">
-          {isLoggedIn && (
-            <>
-              <NavLink
-                to="/blogs"
-                end
-                className={({ isActive }) =>
-                  isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
-                }
-              >
-                All Posts
-              </NavLink>
-              <NavLink
-                to="/myBlogs"
-                className={({ isActive }) =>
-                  isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
-                }
-              >
-                My Posts
-              </NavLink>
-              <NavLink
-                to="/blogs/add"
-                className={({ isActive }) =>
-                  isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
-                }
-              >
-                Add Posts
-              </NavLink>
-            </>
-          )}
-          {!isLoggedIn ? (
-            <>
-              <Link to="/login">
-                <button className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold">
-                  Login
-                </button>
-              </Link>
-              <Link to="/signup">
-                <button className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold">
-                  SignUp
-                </button>
-              </Link>
-            </>
-          ) : (
-            <button 
-              onClick={handleLogout}
-              className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold"
-            >
-              Logout
+    <div className="bg-gradient-to-r from-orange-400 to-yellow-400 p-4 z-50 w-full fixed top-0">
+  <div className="container mx-auto flex justify-between items-center relative z-10">
+    <h1 className="text-4xl font-mono text-white font-bold">PostFix</h1>
+    <div className="lg:hidden">
+      {!isMenuOpen && (
+        <img 
+          src={menuIcon} 
+          alt="Menu Icon" 
+          className="h-6 w-6 cursor-pointer" 
+          onClick={toggleMenu} 
+        />
+      )}
+    </div>
+    <div className="hidden lg:flex space-x-6 items-center">
+      {isLoggedIn && (
+        <>
+          <NavLink
+            to="/blogs"
+            end
+            className={({ isActive }) =>
+              isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
+            }
+          >
+            All Posts
+          </NavLink>
+          <NavLink
+            to="/myBlogs"
+            className={({ isActive }) =>
+              isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
+            }
+          >
+            My Posts
+          </NavLink>
+          <NavLink
+            to="/blogs/add"
+            className={({ isActive }) =>
+              isActive ? "text-orange-700 text-xl font-semibold border-b-2 border-orange-700 pb-1" : "text-gray-900 text-xl font-semibold hover:text-gray-700"
+            }
+          >
+            Add Posts
+          </NavLink>
+        </>
+      )}
+      {!isLoggedIn ? (
+        <>
+          <Link to="/login">
+            <button className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold relative z-20">
+              Login
             </button>
-          )}
-        </div>
-      </div>
+          </Link>
+          <Link to="/signup">
+            <button className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold relative z-20">
+              SignUp
+            </button>
+          </Link>
+        </>
+      ) : (
+        <button 
+          onClick={handleLogout}
+          className="bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700 transition duration-300 font-semibold relative z-20"
+        >
+          Logout
+        </button>
+      )}
+    </div>
+  </div>
       {isMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 z-10 flex flex-col items-center justify-center space-y-6">
           <img 

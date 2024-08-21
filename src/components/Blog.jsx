@@ -48,13 +48,13 @@ const Blog = ({ username, title, imageURL, description, isUser, id, createdAt, r
   };
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   return (
-    <div className="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden m-4">
-      <div className="px-6 py-4">
+    <div className="max-w-md w-full border shadow-md overflow-hidden m-1 md:mx-6 rounded-sm bg-gray-100 ">
+      <div className=" py-4 px-2 bg-white ">
         <div className="flex items-center mb-2">
           <div className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center text-white text-xl">
             {avatarLetter}

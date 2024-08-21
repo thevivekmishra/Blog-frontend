@@ -46,8 +46,8 @@ const BlogDetails = () => {
         title: inputs.title,
         description: inputs.description,
       });
-      console.log('Blog updated successfully:', res.data);
-      toast.success('Blog updated successfully');
+      console.log('Post updated successfully:', res.data);
+      toast.success('Post updated successfully');
       navigate('/myBlogs'); // Navigate to /myBlogs after successful update
     } catch (error) {
       console.error('Error updating blog:', error);
@@ -55,12 +55,12 @@ const BlogDetails = () => {
   };
 
   if (!blog) {
-    return <div>Loading...</div>; 
+    return <div className='mt-24 flex justify-center items-center'>Loading...</div>; 
   }
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 p-3">
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster/>
       <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">Update Your Post</h2>
         <div className="mb-4">
